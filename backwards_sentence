@@ -1,0 +1,34 @@
+# Daniel Austin
+# Begin Date: 6/14/2016
+# Last Update: 6/14/2016
+
+print """
+This program takes a user provided sentence and returns it backwards
+letter by letter.
+
+For Example: "One two three." returns ".eerht owt enO"
+
+Let's begin:
+
+"""
+
+sentence = raw_input("Type any sentence here: ")
+
+split_sentence = sentence.split()
+
+backward_list = []
+for i in range(0, len(split_sentence)):
+	popped_word = split_sentence.pop()
+	backward_list.append(popped_word)
+
+backwards_words_list = []
+for word in backward_list:
+	backwards_word = []
+	for i in range(0, len(word)):
+		backwards_word.append(word[-1 - i])
+	joined_word = ''.join(backwards_word)
+	backwards_words_list.append(joined_word)
+
+fully_backwards_sentence = ' '.join(backwards_words_list)
+
+print fully_backwards_sentence
